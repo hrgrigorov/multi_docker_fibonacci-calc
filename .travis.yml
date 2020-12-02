@@ -14,7 +14,7 @@ after_success:
   - docker build -t hrgrigorov/multi-server ./server
   - docker build -t hrgrigorov/multi-worker ./worker
 
-  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push hrgrigorov/multi-client
   - docker push hrgrigorov/multi-nginx
   - docker push hrgrigorov/multi-server
